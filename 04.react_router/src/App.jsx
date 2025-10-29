@@ -6,23 +6,25 @@ import Home from './component/Home'
 import About from './component/About'
 import Join from './component/Join'
 import Login from './component/Login'
-import {Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 // Router : 주소값에 따라 다른 컴포넌트를 출력하는 방법
 
 // Route : 컴포넌트에 주소값을 대응 시키는 기능
 // Routes : Route를 통해 사용한 주소값을 관리
 function App() {
- 
+ const [count, setCount] = useState(0)
 
   return (
     <>
-    <Routes>
-        <Route path='/' element={<Home></Home>} />
-        <Route path='/about' element={<About></About>} />
-        <Route path='/join' element={<Join></Join>} />
-        <Route path='/login' element={<Login></Login>} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/about' element = {<About></About>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route> 
+        <Route path='/join' element={<Join></Join>}></Route>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
